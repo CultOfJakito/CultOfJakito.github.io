@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../..">
+        <link rel="prev" href="../1-prerequisites/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -17,7 +17,7 @@
     
     
       
-        <title>Before starting - Ultrakill Modding Wiki</title>
+        <title>Where do i start - Ultrakill Modding Wiki</title>
       
     
     
@@ -27,6 +27,14 @@
         <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
+  
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21Z"/></svg>');}</style>
+
 
     
     
@@ -65,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#before-starting" class="md-skip">
+        <a href="#where-do-i-start" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Before starting
+              Where do i start
             
           </span>
         </div>
@@ -224,6 +232,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../1-prerequisites/" class="md-nav__link">
+        Before starting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -236,7 +258,7 @@
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Before starting
+        Where do i start
       </a>
       
     </li>
@@ -283,14 +305,51 @@
                   
 
 
-<h1 id="before-starting">Before starting</h1>
-<p>To get started you're gonna need a few things:  </p>
-<ul>
-<li>Ultrakill (obviously)</li>
-<li>Some C# and/or Unity knowledge</li>
-<li>Visual Studio with support for C# installed or JetBrains Rider (VSCode or any other IDE can work but its easier to use Visual Studio)</li>
-<li><a href="https://docs.bepinex.dev/articles/dev_guide/plugin_tutorial/1_setup.html">BepInEx already setup</a></li>
-</ul>
+<h1 id="where-do-i-start">Where do i start</h1>
+<p>There are two types of mods for Ultrakill. BepInEx and UMM.<br />
+We'll explain the differences later but for now, we'll be using BepInEx. Switching later should be easy as breathing if you understand the basics.  </p>
+<p>To start, create a new BepInEx project using this command  </p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>dotnet new bepinex5plugin -n <span class="p">&lt;</span>plugin name<span class="p">&gt;</span> -T netstandard2.0 -U 2019.4.16
+</code></pre></div>
+or the convenient batch script i made (if you're on Windows) 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">@</span><span class="k">echo</span> off
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">set</span> <span class="k">/p</span> <span class="nv">name</span><span class="p">=</span>Mod name: 
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>dotnet new bepinex5plugin -n <span class="nv">%name%</span> -T netstandard2.0 -U 2019.4.16
+</code></pre></div></p>
+<p>When done, you should have a folder with the name of your mod where you ran the command. Open it, there should be 3 files <code>NuGet.Config</code>,<code>Plugin.cs</code> and <code>&lt;plugin name&gt;.csproj</code>. Open the <code>.csproj</code> file with Visual Studio (or your prefered IDE)</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you are using Visual Studio Code, doing so will open the file, not the project. Open the directory with VSCode instead.</p>
+</div>
+<p>Once Visual Studio finishes loading, select <code>Plugin.cs</code> in the Solution explorer adn you should see something like this 
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">using</span><span class="w"> </span><span class="nn">BepInEx</span><span class="p">;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="k">namespace</span><span class="w"> </span><span class="nn">Plugin</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="p">{</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">    </span><span class="na">[BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Plugin</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">BaseUnityPlugin</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Awake</span><span class="p">()</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">            </span><span class="c1">// Plugin startup logic</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">            </span><span class="n">Logger</span><span class="p">.</span><span class="n">LogInfo</span><span class="p">(</span><span class="s">$&quot;Plugin {PluginInfo.PLUGIN_GUID} is loaded!&quot;</span><span class="p">);</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div></p>
 
 
 
@@ -328,7 +387,7 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
