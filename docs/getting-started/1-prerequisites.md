@@ -1,9 +1,8 @@
-# Before starting
-## Prerequisites
+# Prerequisites
 
 To get started you're gonna need a few things:  
 
-* Ultrakill (obviously)
-* Some C# and/or Unity knowledge
-* Visual Studio with support for C# installed or JetBrains Rider (VSCode or any other IDE can work but its easier to use Visual Studio)
-* [BepInEx already setup](https://docs.bepinex.dev/articles/dev_guide/plugin_tutorial/1_setup.html)
+* ULTRAKILL (obviously).
+* Some C# and/or Unity knowledge.
+* Any C# IDE, but for this we recommend [Visual Studio](https://visualstudio.microsoft.com/vs/).
+* [BepInEx already set up](https://docs.bepinex.dev/articles/dev_guide/plugin_tutorial/1_setup.html).
