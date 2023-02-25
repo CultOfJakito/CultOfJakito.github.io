@@ -1,4 +1,6 @@
 site_name: Ultrakill Modding Wiki
+plugins:
+  - search
 theme:
   name: material
   features:
@@ -7,7 +9,7 @@ theme:
   favicon: assets/images/favicon.png
   palette: 
     scheme: slate
-    primary: indigo
-    accent: yellow
+    primary: black
+    accent: deep orange
   
   logo: assets/images/ultrakill.png

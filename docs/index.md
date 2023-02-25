@@ -1,4 +1,4 @@
-# Welcome to the Ultrakill Modding Wiki
+# Welcome
 
 Here you will learn how to mod Ultrakill
 
