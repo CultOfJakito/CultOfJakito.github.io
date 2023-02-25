@@ -1,4 +1,4 @@
-# Where do i start
+# Where do I start
 
 There are two types of mods for Ultrakill. BepInEx and UMM.  
 We'll explain the differences later but for now, we'll be using BepInEx. Switching later should be easy as breathing if you understand the basics.  
@@ -8,7 +8,7 @@ To start, create a new BepInEx project using this command
 ```bat
 dotnet new bepinex5plugin -n <plugin name> -T netstandard2.0 -U 2019.4.16
 ```  
-or the convenient batch script i made (if you're on Windows) 
+or the convenient batch script I made (if you're on Windows) 
 ```bat
 @echo off
 set /p name=Mod name: 
