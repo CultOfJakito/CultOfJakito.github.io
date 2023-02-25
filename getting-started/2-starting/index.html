@@ -257,9 +257,40 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Where do I start
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Where do I start
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#first-things-first" class="md-nav__link">
+    First things first
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -292,6 +323,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#first-things-first" class="md-nav__link">
+    First things first
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -306,6 +352,7 @@
 
 
 <h1 id="where-do-i-start">Where do I start</h1>
+<h2 id="first-things-first">First things first</h2>
 <p>There are two types of mods for Ultrakill. BepInEx and UMM.<br />
 We'll explain the differences later but for now, we'll be using BepInEx. Switching later should be easy as breathing if you understand the basics.  </p>
 <p>To start, create a new BepInEx project using this command  </p>
@@ -321,8 +368,8 @@ or the convenient batch script I made (if you're on Windows)
 <p class="admonition-title">Warning</p>
 <p>If you are using Visual Studio Code, doing so will open the file, not the project. Open the directory with VSCode instead.</p>
 </div>
-<p>Once Visual Studio finishes loading, select <code>Plugin.cs</code> in the Solution explorer adn you should see something like this 
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<p>Once Visual Studio finishes loading, select <code>Plugin.cs</code> in the Solution explorer and you should see something like this 
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Default BepInEx Plugin</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
@@ -335,14 +382,14 @@ or the convenient batch script I made (if you're on Windows)
 <span class="normal"><a href="#__codelineno-2-11">11</a></span>
 <span class="normal"><a href="#__codelineno-2-12">12</a></span>
 <span class="normal"><a href="#__codelineno-2-13">13</a></span>
-<span class="normal"><a href="#__codelineno-2-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">using</span><span class="w"> </span><span class="nn">BepInEx</span><span class="p">;</span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">using</span><span class="w"> </span><span class="nn">BepInEx</span><span class="p">;</span><span class="w"> </span><span class="c1">//(1)!</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2"></a>
 <a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="k">namespace</span><span class="w"> </span><span class="nn">Plugin</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="p">{</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">    </span><span class="na">[BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">    </span><span class="na">[BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]</span><span class="w"> </span><span class="c1">//(2)!</span>
 <a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Plugin</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">BaseUnityPlugin</span>
 <a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Awake</span><span class="p">()</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Awake</span><span class="p">()</span><span class="w"> </span><span class="c1">//(3)!</span>
 <a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">        </span><span class="p">{</span>
 <a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">            </span><span class="c1">// Plugin startup logic</span>
 <a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">            </span><span class="n">Logger</span><span class="p">.</span><span class="n">LogInfo</span><span class="p">(</span><span class="s">$&quot;Plugin {PluginInfo.PLUGIN_GUID} is loaded!&quot;</span><span class="p">);</span>
@@ -350,6 +397,18 @@ or the convenient batch script I made (if you're on Windows)
 <a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div></p>
+<ol>
+<li>
+<p>This line is basicaly telling our IDE and the compiler that we're using the BepInEx namespace and everything inside.</p>
+</li>
+<li>
+<p>WIP</p>
+</li>
+<li>
+<p>This part will be the first to be called when the game starts and the mod is loaded</p>
+</li>
+</ol>
+<p>If you don't, you messed something up and V1 is rapidly approaching your house. I'll start by explaining what most of the stuff here is (if you never touched C# or Unity before).  </p>
 
 
 
@@ -361,6 +420,11 @@ or the convenient batch script I made (if you're on Windows)
           
           
         </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
         
       </main>
       
@@ -387,7 +451,7 @@ or the convenient batch script I made (if you're on Windows)
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.top", "toc.follow", "navigation.tracking", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
