@@ -1,4 +1,5 @@
 # Before starting
+## Prerequisites
 
 To get started you're gonna need a few things:  
 

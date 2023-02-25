@@ -5,6 +5,8 @@ theme:
   name: material
   features:
     - navigation.instant
+    - navigation.top
+    - toc.follow
     - navigation.tracking
     - content.code.copy
     - content.code.annotate
@@ -19,10 +21,12 @@ theme:
   
   logo: assets/images/ultrakill.png
 markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
   - pymdownx.highlight:
       anchor_linenums: true
+  - pymdownx.details
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
-  - admonition
-  - pymdownx.details
