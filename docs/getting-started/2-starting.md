@@ -18,7 +18,7 @@ dotnet new bepinex5plugin -n <plugin name> -T netstandard2.0 -U 2019.4.16
 ```  
 
 When done, you should have a folder with the name of your mod where you ran the command. Open it, there should be 3 files `NuGet.Config`,`Plugin.cs` and `<plugin name>.csproj`. Open the `.csproj` file with Visual Studio, or your prefered IDE.
-!!! warning
+!!! note
     If you are using Visual Studio Code, doing so will open the file, not the project. Open the directory with VSCode instead.
 
 Once Visual Studio loads, open `Plugin.cs` in the Solution Explorer. This will be the core of your mod, and it should look like this:
