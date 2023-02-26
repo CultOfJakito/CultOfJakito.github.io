@@ -96,4 +96,19 @@ With any luck, you should see a line that reads `Plugin <plugin name> is loaded!
 
 ![log from mod](https://media.discordapp.net/attachments/727956051156271175/1079180304100626472/image.png)
 
-If you do, well done! You have a functional mod.
+If you do, well done! You have a functional mod.  
+
+Now, to ease the developement process, let's enable BepInEx's console. For that, head to `<Ultrakill directory>\BepInEx\Config` and open `BepInEx.cfg`. Scroll down a bit until you find this 
+```properties
+[Logging.Console]
+
+## Enables showing a console for log output.
+# Setting type: Boolean
+# Default value: false
+Enabled = false
+```
+
+Replace `false` with `true` and start the game again. You should now see a console window open when you start the game
+
+!!! note
+    Seems obvious but you won't be able to use it correctly if you have the game in fullscreen. If that's the case, please set the game to windowed, unless you have multiple screens.
