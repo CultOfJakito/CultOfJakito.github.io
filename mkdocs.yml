@@ -8,6 +8,7 @@ theme:
     - navigation.top
     - toc.follow
     - navigation.tracking
+    - navigation.indexes
     - content.code.copy
     - content.code.annotate
   favicon: assets/images/favicon.png
@@ -17,7 +18,7 @@ theme:
   palette: 
     scheme: slate
     primary: black
-    accent: deep orange
+    accent: red
   
   logo: assets/images/ultrakill.png
 markdown_extensions:
@@ -30,3 +31,5 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+extra_css:
+  - theme/extra.css
