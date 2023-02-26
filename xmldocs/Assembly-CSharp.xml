@@ -5,28 +5,32 @@
 		<name>Assembly-CSharp</name>
 	</assembly>
 	
-	<!--NewMovement-->
+	<members>
+	
+		<!--NewMovement-->
 
-	<member name="T:NewMovement">
-		<summary>
-			The main player class. Responsible for movement, health/damage mechanics, player VFX, etc.
-		</summary>
-	</member>
+		<member name="T:NewMovement">
+			<summary>
+				The main player class. Responsible for movement, health/damage mechanics, player VFX, etc.
+			</summary>
+		</member>
 
-	<member name="M:NewMovement.ActivatePlayer()">
-		<summary>
-			Activates the player, the <see cref="T:CameraController"/> instance, and the <see cref="T:GunControl"/> and <see cref="T:FistControl"/> instances.
-		</summary>
-	</member>
-	<member name="M:NewMovement.DeactivatePlayer()">
-		<summary>
-			Deactivates the player, the <see cref="T:CameraController"/> instance, and the <see cref="T:GunControl"/> and <see cref="T:FistControl"/> instances.
-		</summary>
-	</member>
+		<member name="M:NewMovement.ActivatePlayer()">
+			<summary>
+				Activates the player, the <see cref="T:CameraController"/> instance, and the <see cref="T:GunControl"/> and <see cref="T:FistControl"/> instances.
+			</summary>
+		</member>
+		<member name="M:NewMovement.DeactivatePlayer()">
+			<summary>
+				Deactivates the player, the <see cref="T:CameraController"/> instance, and the <see cref="T:GunControl"/> and <see cref="T:FistControl"/> instances.
+			</summary>
+		</member>
 
-	<member name="F:NewMovement.activated">
-		<summary>
-			Whether or not the player is currently active. It is not recommended to write to this value directly; instead use <see cref="M:NewMovement.ActivatePlayer()"/> and <see cref="M:NewMovement.DeactivatePlayer()"/>
-		</summary>
-	</member>
+		<member name="F:NewMovement.activated">
+			<summary>
+				Whether or not the player is currently active. It is not recommended to write to this value directly; instead use <see cref="M:NewMovement.ActivatePlayer()"/> and <see cref="M:NewMovement.DeactivatePlayer()"/>.
+			</summary>
+		</member>
+	
+	</members>
 </doc>
