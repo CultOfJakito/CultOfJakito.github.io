@@ -17,7 +17,7 @@
     
     
       
-        <title>Where do I start - Ultrakill Modding Wiki</title>
+        <title>Setup - ULTRAKILL Modding Wiki</title>
       
     
     
@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#where-do-i-start" class="md-skip">
+        <a href="#setup" class="md-skip">
           Skip to content
         </a>
       
@@ -87,7 +87,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Ultrakill Modding Wiki" class="md-header__button md-logo" aria-label="Ultrakill Modding Wiki" data-md-component="logo">
+    <a href="../.." title="ULTRAKILL Modding Wiki" class="md-header__button md-logo" aria-label="ULTRAKILL Modding Wiki" data-md-component="logo">
       
   <img src="../../assets/images/ultrakill.png" alt="logo">
 
@@ -99,13 +99,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Ultrakill Modding Wiki
+            ULTRAKILL Modding Wiki
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Where do I start
+              Setup
             
           </span>
         </div>
@@ -172,12 +172,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Ultrakill Modding Wiki" class="md-nav__button md-logo" aria-label="Ultrakill Modding Wiki" data-md-component="logo">
+    <a href="../.." title="ULTRAKILL Modding Wiki" class="md-nav__button md-logo" aria-label="ULTRAKILL Modding Wiki" data-md-component="logo">
       
   <img src="../../assets/images/ultrakill.png" alt="logo">
 
     </a>
-    Ultrakill Modding Wiki
+    ULTRAKILL Modding Wiki
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -235,7 +235,7 @@
   
     <li class="md-nav__item">
       <a href="../1-prerequisites/" class="md-nav__link">
-        Before starting
+        Prerequisites
       </a>
     </li>
   
@@ -258,12 +258,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Where do I start
+          Setup
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Where do I start
+        Setup
       </a>
       
         
@@ -282,8 +282,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#first-things-first" class="md-nav__link">
-    First things first
+  <a href="#project-creation" class="md-nav__link">
+    Project Creation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-libraries" class="md-nav__link">
+    Adding Libraries
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building" class="md-nav__link">
+    Building
   </a>
   
 </li>
@@ -330,8 +344,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#first-things-first" class="md-nav__link">
-    First things first
+  <a href="#project-creation" class="md-nav__link">
+    Project Creation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-libraries" class="md-nav__link">
+    Adding Libraries
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building" class="md-nav__link">
+    Building
   </a>
   
 </li>
@@ -351,24 +379,23 @@
                   
 
 
-<h1 id="where-do-i-start">Where do I start</h1>
-<h2 id="first-things-first">First things first</h2>
-<p>There are two types of mods for Ultrakill. BepInEx and UMM.<br />
-We'll explain the differences later but for now, we'll be using BepInEx. Switching later should be easy as breathing if you understand the basics.  </p>
-<p>To start, create a new BepInEx project using this command  </p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>dotnet new bepinex5plugin -n <span class="p">&lt;</span>plugin name<span class="p">&gt;</span> -T netstandard2.0 -U 2019.4.16
-</code></pre></div>
-or the convenient batch script I made (if you're on Windows) 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">@</span><span class="k">echo</span> off
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">set</span> <span class="k">/p</span> <span class="nv">name</span><span class="p">=</span>Mod name: 
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>dotnet new bepinex5plugin -n <span class="nv">%name%</span> -T netstandard2.0 -U 2019.4.16
+<h1 id="setup">Setup</h1>
+<h2 id="project-creation">Project Creation</h2>
+<p>There are two types of mods for ULTRAKILL - BepInEx and UMM.  </p>
+<p>BepInEx is easier to set up, but UMM supports unloading and reloading, as well as some useful functions like custom keybinds.
+We'll be using BepInEx, but it's easy to convert it later.</p>
+<p>First, open the Command Prompt, and enter the directory in which you want the project to be made. 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">cd</span> C:\Path\To\Your\Folder
 </code></pre></div></p>
-<p>When done, you should have a folder with the name of your mod where you ran the command. Open it, there should be 3 files <code>NuGet.Config</code>,<code>Plugin.cs</code> and <code>&lt;plugin name&gt;.csproj</code>. Open the <code>.csproj</code> file with Visual Studio (or your prefered IDE)</p>
+<p>Then, run this to create the project.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>dotnet new bepinex5plugin -n <span class="p">&lt;</span>plugin name<span class="p">&gt;</span> -T netstandard2.0 -U 2019.4.16
+</code></pre></div></p>
+<p>When done, you should have a folder with the name of your mod where you ran the command. Open it, there should be 3 files <code>NuGet.Config</code>,<code>Plugin.cs</code> and <code>&lt;plugin name&gt;.csproj</code>. Open the <code>.csproj</code> file with Visual Studio, or your prefered IDE.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>If you are using Visual Studio Code, doing so will open the file, not the project. Open the directory with VSCode instead.</p>
 </div>
-<p>Once Visual Studio finishes loading, select <code>Plugin.cs</code> in the Solution explorer and you should see something like this 
+<p>Once Visual Studio loads, open <code>Plugin.cs</code> in the Solution Explorer. This will be the core of your mod, and it should look like this:
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Default BepInEx Plugin</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
@@ -387,7 +414,7 @@ or the convenient batch script I made (if you're on Windows)
 <a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="k">namespace</span><span class="w"> </span><span class="nn">Plugin</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="p">{</span>
 <a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">    </span><span class="na">[BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]</span><span class="w"> </span><span class="c1">//(2)!</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Plugin</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">BaseUnityPlugin</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Plugin</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">BaseUnityPlugin</span><span class="w"> </span><span class="c1">//(4)!</span>
 <a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">    </span><span class="p">{</span>
 <a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Awake</span><span class="p">()</span><span class="w"> </span><span class="c1">//(3)!</span>
 <a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">        </span><span class="p">{</span>
@@ -399,16 +426,59 @@ or the convenient batch script I made (if you're on Windows)
 </code></pre></div></td></tr></table></div></p>
 <ol>
 <li>
-<p>This line is basicaly telling our IDE and the compiler that we're using the BepInEx namespace and everything inside.</p>
+<p>This line imports the <code>BepInEx</code> namespace, letting us use any code in it - like <code>BepInPlugin</code>, or <code>BaseUnityPlugin</code>.</p>
 </li>
 <li>
-<p>WIP</p>
+<p>This <code>Attribute</code> tells BepInEx the metadata of your mod.</p>
 </li>
 <li>
-<p>This part will be the first to be called when the game starts and the mod is loaded</p>
+<p>The function <code>Awake()</code> is the first to be called when the mod is loaded.</p>
+</li>
+<li>
+<p>BaseUnityPlugin extends from <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.html">MonoBehaviour</a>, so you can use functions such as <code>Update()</code>, which is called on every frame.</p>
 </li>
 </ol>
-<p>If you don't, you messed something up and V1 is rapidly approaching your house. I'll start by explaining what most of the stuff here is (if you never touched C# or Unity before).  </p>
+<p>If it doesn't look like this, you messed something up. Congratulations! V1 is rapidly approaching your house, and assuming you can't slide and dash, he's probably faster than you. Good luck!</p>
+<h2 id="adding-libraries">Adding Libraries</h2>
+<p>Considering you're making a mod, you probably want to change stuff. For that, we need to add the game's code first.</p>
+<p>Begin by opening your ULTRAKILL folder. If you don't know how to do that, open Steam, and do this.</p>
+<p><img alt="open steam path" src="https://cdn.discordapp.com/attachments/727956051156271175/1079171277388005456/image.png" /></p>
+<p>From there, navigate to <code>ULTRAKILL_Data\Managed</code>, and you'll see a lot of DLL files. Copy down this path, because you'll need it.</p>
+<p>Then, back in Visual Studio, right-click on the Dependencies button in the Solution Explorer, and press Add Project References, then Browse.</p>
+<p><img alt="references image" src="https://media.discordapp.net/attachments/727956051156271175/1079183475258703924/image.png" /></p>
+<p>Navigate to the path you copied down, then add <code>Assembly-CSharp.dll</code>, as well as every one starting with <code>UnityEngine</code>. This will add all of the code from ULTRAKILL and Unity, letting us use it for the mod.</p>
+<p>This may take a while to load, so grab a snack.</p>
+<h2 id="building">Building</h2>
+<p>Now we've got our basic set-up out the way, we need to make sure that it works.</p>
+<p>Press <code>Ctrl + B</code> to build, and you should see some output at the bottom of your screen.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You might get an error like <code>'PluginInfo' does not contain a definition for 'PLUGIN_GUID'</code>. </p>
+<p>In this case, replace both instances of <code>PluginInfo.PLUGIN_GUID</code> with your own GUID (we suggest <code>yourname.ultrakill.modname</code>), <code>PluginInfo.PLUGIN_NAME</code> with your mod's name, and <code>PluginInfo.PLUGIN_VERSION</code> with the mod's <a href="https://devhints.io/semver">semver</a> version - start with <code>1.0.0</code>.</p>
+</div>
+<p>Among other things, you should see <code>&lt;project name&gt; -&gt; "C:\Path\To\Your\Folder\bin\Debug\netstandard2.0\&lt;plugin name&gt;.dll</code> - this is the folder the mod has been built to.</p>
+<p><img alt="build success" src="https://media.discordapp.net/attachments/727956051156271175/1079179511926640660/image.png" /></p>
+<p>Go to said folder, and you'll see a few DLLs.</p>
+<p><img alt="folder with dlls" src="https://media.discordapp.net/attachments/727956051156271175/1079180682804342894/image.png" /></p>
+<p>Copy the one with your mod's name, and paste it into <code>ULTRAKILL\BepInEx\plugins</code>. Afterwards, run the game, and close it again.</p>
+<p>Then, navigate to <code>ULTRAKILL\BepInEx\</code>, and open <code>LogOutput.log</code>. </p>
+<p><img alt="log in folder" src="https://media.discordapp.net/attachments/727956051156271175/1079181031061602384/image.png" /></p>
+<p>With any luck, you should see a line that reads <code>Plugin &lt;plugin name&gt; is loaded!</code>.</p>
+<p><img alt="log from mod" src="https://media.discordapp.net/attachments/727956051156271175/1079180304100626472/image.png" /></p>
+<p>If you do, well done! You have a functional mod.  </p>
+<p>Now, to ease the developement process, let's enable BepInEx's console. For that, head to <code>&lt;Ultrakill directory&gt;\BepInEx\Config</code> and open <code>BepInEx.cfg</code>. Scroll down a bit until you find this 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="na">[Logging.Console]</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1">## Enables showing a console for log output.</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># Setting type: Boolean</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1"># Default value: false</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="na">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">false</span>
+</code></pre></div></p>
+<p>Replace <code>false</code> with <code>true</code> and start the game again. You should now see a console window open when you start the game</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Seems obvious but you won't be able to use it correctly if you have the game in fullscreen. If that's the case, please set the game to windowed, unless you have multiple screens.</p>
+</div>
 
 
 
