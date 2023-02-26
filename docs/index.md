@@ -1,21 +1,9 @@
-# Welcome to MkDocs
+# Welcome
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Here you will learn how to mod Ultrakill
 
-## Commands
+![Image](assets/images/ultrakill.png)
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+# Contributing
 
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
-
-## Test
-
-Text
+If you want to contribute to this wiki, head over to the [repository](https://github.com/CultOfJakito/CultOfJakito.github.io/) and read the README

@@ -1,4 +1,34 @@
-site_name: Ultrakill Modding Wiki
+site_name: ULTRAKILL Modding Wiki
+plugins:
+  - search
 theme:
   name: material
+  features:
+    - navigation.instant
+    - navigation.top
+    - toc.follow
+    - navigation.tracking
+    - content.code.copy
+    - content.code.annotate
   favicon: assets/images/favicon.png
+  icon:
+    admonition:
+      warning: material/alert
+  palette: 
+    scheme: slate
+    primary: black
+    accent: deep orange
+  
+  logo: assets/images/ultrakill.png
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+extra:
+  generator: false
