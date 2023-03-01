@@ -9,11 +9,11 @@
       
       
       
-        <link rel="prev" href="../1-prerequisites/">
+        <link rel="prev" href="../prerequisites/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.14">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.15">
     
     
       
@@ -234,7 +234,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1-prerequisites/" class="md-nav__link">
+      <a href="../prerequisites/" class="md-nav__link">
         Prerequisites
       </a>
     </li>
@@ -302,6 +302,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#making-something-useful" class="md-nav__link">
+    Making something useful
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -364,6 +371,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#making-something-useful" class="md-nav__link">
+    Making something useful
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -379,8 +393,8 @@
                   
 
 
-<h1 id="setup">Setup</h1>
-<h2 id="project-creation">Project Creation</h2>
+<h1 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">🔗&#xFE0E;</a></h1>
+<h2 id="project-creation">Project Creation<a class="headerlink" href="#project-creation" title="Permanent link">🔗&#xFE0E;</a></h2>
 <p>There are two types of mods for ULTRAKILL - BepInEx and UMM.  </p>
 <p>BepInEx is easier to set up, but UMM supports unloading and reloading, as well as some useful functions like custom keybinds.
 We'll be using BepInEx, but it's easy to convert it later.</p>
@@ -439,7 +453,7 @@ We'll be using BepInEx, but it's easy to convert it later.</p>
 </li>
 </ol>
 <p>If it doesn't look like this, you messed something up. Congratulations! V1 is rapidly approaching your house, and assuming you can't slide and dash, he's probably faster than you. Good luck!</p>
-<h2 id="adding-libraries">Adding Libraries</h2>
+<h2 id="adding-libraries">Adding Libraries<a class="headerlink" href="#adding-libraries" title="Permanent link">🔗&#xFE0E;</a></h2>
 <p>Considering you're making a mod, you probably want to change stuff. For that, we need to add the game's code first.</p>
 <p>Begin by opening your ULTRAKILL folder. If you don't know how to do that, open Steam, and do this.</p>
 <p><img alt="open steam path" src="https://cdn.discordapp.com/attachments/727956051156271175/1079171277388005456/image.png" /></p>
@@ -448,7 +462,7 @@ We'll be using BepInEx, but it's easy to convert it later.</p>
 <p><img alt="references image" src="https://media.discordapp.net/attachments/727956051156271175/1079183475258703924/image.png" /></p>
 <p>Navigate to the path you copied down, then add <code>Assembly-CSharp.dll</code>, as well as every one starting with <code>UnityEngine</code>. This will add all of the code from ULTRAKILL and Unity, letting us use it for the mod.</p>
 <p>This may take a while to load, so grab a snack.</p>
-<h2 id="building">Building</h2>
+<h2 id="building">Building<a class="headerlink" href="#building" title="Permanent link">🔗&#xFE0E;</a></h2>
 <p>Now we've got our basic set-up out the way, we need to make sure that it works.</p>
 <p>Press <code>Ctrl + B</code> to build, and you should see some output at the bottom of your screen.</p>
 <div class="admonition warning">
@@ -479,6 +493,36 @@ We'll be using BepInEx, but it's easy to convert it later.</p>
 <p class="admonition-title">Note</p>
 <p>Seems obvious but you won't be able to use it correctly if you have the game in fullscreen. If that's the case, please set the game to windowed, unless you have multiple screens.</p>
 </div>
+<h2 id="making-something-useful">Making something useful<a class="headerlink" href="#making-something-useful" title="Permanent link">🔗&#xFE0E;</a></h2>
+<p>Now let's make our mod do something other than say its full name</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span>
+<span class="normal"><a href="#__codelineno-4-13">13</a></span>
+<span class="normal"><a href="#__codelineno-4-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">using</span><span class="w"> </span><span class="nn">BepInEx</span><span class="p">;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="k">namespace</span><span class="w"> </span><span class="nn">Plugin</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="p">{</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">    </span><span class="na">[BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Plugin</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">BaseUnityPlugin</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Awake</span><span class="p">()</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w">            </span><span class="c1">// Plugin startup logic</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="w">            </span><span class="n">Logger</span><span class="p">.</span><span class="n">LogInfo</span><span class="p">(</span><span class="s">$&quot;Plugin {PluginInfo.PLUGIN_GUID} is loaded!&quot;</span><span class="p">);</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
 
 
 
@@ -516,7 +560,7 @@ We'll be using BepInEx, but it's easy to convert it later.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.top", "toc.follow", "navigation.tracking", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.top", "navigation.tracking", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
