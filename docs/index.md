@@ -1,8 +1,11 @@
 # Welcome
 
-Here you will learn how to mod Ultrakill
+Here you will learn how to mod Ultrakill.  
+We won't teach you how to program here but there are some resources for you if you were expecting that.
 
-![Image](assets/images/ultrakill.png)
+* Link1
+* Link2
+* Link3
 
 # Contributing
 

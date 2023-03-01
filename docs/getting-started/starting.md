@@ -112,3 +112,24 @@ Replace `false` with `true` and start the game again. You should now see a conso
 
 !!! note
     Seems obvious but you won't be able to use it correctly if you have the game in fullscreen. If that's the case, please set the game to windowed, unless you have multiple screens.
+
+## Making something useful
+
+Now let's make our mod do something other than say its full name
+
+```cs linenums="1"
+using BepInEx;
+
+namespace Plugin
+{
+    [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
+    public class Plugin : BaseUnityPlugin
+    {
+        private void Awake()
+        {
+            // Plugin startup logic
+            Logger.LogInfo($"Plugin {PluginInfo.PLUGIN_GUID} is loaded!");
+        }
+    }
+}
+```
