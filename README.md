@@ -10,6 +10,6 @@ This website will be automatically reloaded everytime a change gets detected. Wh
 
 # Useful resources
 
-* [mkdocs website](https://www.mkdocs.org/)
-* [mkdocs-material website](https://squidfunk.github.io/mkdocs-material)
+* [mkdocs website and documentation](https://www.mkdocs.org/)
+* [mkdocs-material website and documentation](https://squidfunk.github.io/mkdocs-material)
 * [Markdown cheat sheet](https://www.markdownguide.org/cheat-sheet/)
